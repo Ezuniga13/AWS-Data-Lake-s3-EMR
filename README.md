@@ -23,9 +23,9 @@ As their data engineer, I built an ETL pipeline that extracts their data from S3
     1. Install cli https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
     2. Go to the root directory and run the following commands it will prompt for credentials, region and format.
      ![Main Page!](/images/STEP-1.png) <br>
-     [Main Page!](/images/STEP-2.png) <br>
-     [Main Page!](/images/STEP-3.png) <br>
-     [Main Page!](/images/STEP-4.png)
+     ![Main Page!](/images/STEP-2.png) <br>
+     ![Main Page!](/images/STEP-3.png) <br>
+     ![Main Page!](/images/STEP-4.png)
     
 
 
