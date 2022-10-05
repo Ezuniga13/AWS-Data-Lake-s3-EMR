@@ -25,7 +25,7 @@ As their data engineer, I built an ETL pipeline that extracts their data from S3
      ![Main Page!](/images/STEP-1.png) <br>
      ![Main Page!](/images/STEP-2.png) <br>
      ![Main Page!](/images/STEP-3.png) <br>
-     ![Main Page!](/images/STEP-4.png)
+     ![Main Page!](/images/STEP-4a.png)
     
 
 
