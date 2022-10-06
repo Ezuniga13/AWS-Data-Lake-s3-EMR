@@ -1,4 +1,4 @@
-# AWS-Data-Lake-s3-EMR
+# AWS-Data-Lake-s3-EMR-Spark
 A data lake that process data using spark.
 
 Esteban Zuniga <br>
