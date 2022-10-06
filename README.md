@@ -56,5 +56,5 @@ As their data engineer, I built an ETL pipeline that extracts their data from S3
 
 ### Schema on read
 
-Spark is a schema on read tech. Take note that there is no sql python scripts because with spark it can manipulate raw data as it is read. The tables were designed before writing and partitioning them to the s3 lake.
+Spark is a schema on read tech. Take note that there is no sql python scripts because with spark it can manipulate raw data as it is read in. The tables were designed before writing and partitioning them to the s3 lake.
 
