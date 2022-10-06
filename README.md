@@ -48,8 +48,7 @@ As their data engineer, I built an ETL pipeline that extracts their data from S3
 
     
 -  etl.py
-     
-
+    This file has the functions that processes the song and log data and throws it into a data lake.
 - dwh.cfg
   This file is where your aws crendentials are stored. 
 
@@ -57,9 +56,5 @@ As their data engineer, I built an ETL pipeline that extracts their data from S3
 
 ### Schema on read
 
-The schema is designed for the analytics team to get insights on what songs their users are listening to and to improve performance by reducing the number of joins.
-
-The fact table labeled as songplays has fields that are comprised from the primary keys for the outer tables.
-
-The outer tables have been denormalized and have user, song, artist and time information that has been duplicated.
+Spark is a schema on read tech. Take note that there is no sql python scripts because with spark it can manipulate raw data as it is read. The tables were designed before writing and partitioning them to the s3 lake.
 
