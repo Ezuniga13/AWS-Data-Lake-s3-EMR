@@ -45,6 +45,8 @@ def process_song_data(spark, input_data, output_data):
                             'artist_id', 'year',            
                             'duration')
     
+    songs_table = songs_table.drop_duplicates(subset=['song_id'])
+    
     # write songs table to parquet files partitioned by year and artist
     songs_table.write.partitionBy('year', 'artist_id') \
     .parquet(output_data + 'songs_table/')
@@ -55,6 +57,8 @@ def process_song_data(spark, input_data, output_data):
                                col('artist_location').alias('location'), \
                                 col('artist_latitude').alias('lattitude'), \
                                     col('artist_longitude').alias('longitude'))
+    
+    artists_table = artists_table.drop_duplicates(subset=['artist_id'])
     
     # write artists table to parquet files
     artists_table.write.parquet(output_data + 'artists_table/')
@@ -88,6 +92,7 @@ def process_log_data(spark, input_data, output_data):
                                'lastName', 'gender', 
                             'level')
     
+    users_table = users_table.drop_duplicates(subset=['userId'])
     # write users table to parquet files
     users_table.write.parquet(output_data + 'users_table/')
     print('users_table loaded')
@@ -123,7 +128,7 @@ def process_log_data(spark, input_data, output_data):
                             'artist_id', 'year',            
                             'duration', 'artist_name')
     
-    
+  
     # extract columns from joined song and log datasets to create songplays table 
     songplays_df = song_df.join(df,(song_df.artist_name ==  df.artist) & (song_df.title == df.song),"inner")
     songplays_table = songplays_df.select(col('itemInsession').alias('songplay_id'), \
@@ -145,8 +150,8 @@ def process_log_data(spark, input_data, output_data):
 def main():
     """Instantiate spark, process data and send to data lake."""
     spark = create_spark_session()
-    input_data = "s3a://udacity-dend/"
-    output_data = 's3a://my-data-lake-bucket-13/'
+    input_data = "s3a://*******-******/"
+    output_data = 's3a://my-***-***-****-13/'
     
     process_song_data(spark, input_data, output_data)    
     process_log_data(spark, input_data, output_data)
